@@ -98,6 +98,52 @@ https://reactjs.org/docs/context.html
 https://github.com/reach/reach-ui/blob/develop/packages/accordion/src/index.tsx
 https://getbootstrap.com/docs/5.1/components/accordion/
 
+Render Props:
+
+https://flexiple.com/react/render-props-an-advanced-react-pattern
+https://blog.logrocket.com/react-render-props-vs-custom-hooks/
+https://medium.com/geekculture/render-props-in-reactjs-d672e3106bc1
+
+
+React Render Props design pattern:
+
+Render props refers to a technique for sharing code between React components
+using a props whose value is a function - React Website.
+
+A render props is a function prop that a component uses to know what to render.
+Child component takes render props as a function and call it instead of
+implmenting its own render logic means we pass a function from the parent
+component to the child component, the child component calls that function
+instead of implementing its own logic.
+
+export function ParentComponent() {
+  return (
+    <div>
+      Parent Props
+      <ChildComponent renderProps={() => <div>Render Props</div>} />
+    </div>
+  );
+}
+
+export function ChildComponent(props: IProps) {
+  return <div>Child component {props.renderProps()}</div>;
+}
+
+Input change example.
+Mouse position example.
+
+
+Task:
+Write one wrapper component which fetch data as per url prop and
+pass to the render prop function component. Parent component will render
+in the UI.
+{props.renderProp(fetchdata)}
+
+
+Reference:
+https://reactjs.org/docs/render-props.html
+https://medium.com/@mjackson/use-a-render-prop-50de598f11ce
+
 */
 
 export {};
